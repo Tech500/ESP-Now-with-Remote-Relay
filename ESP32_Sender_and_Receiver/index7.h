@@ -43,7 +43,7 @@ const char HTML7[] PROGMEM = R"====(
         //7. Use single central port for actual WebRTC ICE connection. If true, the web browser will receive streaming media from predefined single port in Unreal Media Server, dedicated to WebRTC connections (by default 5135). If true, you only need to open port 5135 in firewall/NAT router for Unreal Media Server (together with signaling ports, 5119 or 443). If false, the WebRTC connection will be made over a random port; you will need to open all ports in the firewall, or add Unreal Media Server as an allowed app in the firewall.
         //8. WebRTC transport protocol. Set to "udp" or "tcp". The central port can be used for both udp and tcp.
 
-        webrtcPlayer = new UnrealWebRTCPlayer("remoteVideo", "Wyse", "", "68.50.44.149", "5119", false, true, "tcp");
+        webrtcPlayer = new UnrealWebRTCPlayer("remoteVideo", "Wyse", "", "PublicIPAddress", "5119", false, true, "tcp");
 
         //Comment out next line not to start playing when webpage loads. Then user will need to click on Play button to play; you may want to use a video element with overlayed Play button - check out our SDK for sample webpages.
         webrtcPlayer.Play();    //Start playing automatically when webpage loads. Notice that video element has a "muted" attribute; this is video-only stream anyway. A muted attribute helps to overcome Chrome's autoplay policy, and is not always needed, as described in http://www.umediaserver.net/phpBB3/viewtopic.php?f=29&t=3578
