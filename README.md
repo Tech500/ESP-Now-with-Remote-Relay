@@ -10,4 +10,4 @@ https://github.com/Tech500/CameraRainGauge is the main portion of the Asyncwebse
 
 "collectdata2.php" is used with hosting website on a domain website server; used with the Asyncwebserver, "webInterface" function.  Link in the file to Steohan Borsay's "Hackster.io" article "Send ESP8266 Data to Your Webpage - no AT Commands!" is about the use of "collectorData2.php" file.  Purpose of the php is to retrieve data from your webserver and build a new web page "on-the-fly" dynamically!
 
-Enter your data in "variableInput.h" input fields with "#########".
+Enter your data in "variableInput.h" input fields with "#########".  "variableInput.h" is found in the ESP32_Sender_and_Receiver folder.
