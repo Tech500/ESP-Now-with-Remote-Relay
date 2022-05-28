@@ -1,4 +1,4 @@
-# ESP-Now-with-Remote-Relay --a work-in-progress
+# ESP-Now-with-Remote-Relay
 
 Continuing ESP-Now previous project; added another ESP32 to remotely, change relay from off to on and back to off.
 
