@@ -44,7 +44,7 @@ video feed.
 
 https://observeredweather.000webhostapp.com   Project web site served by Free Hosting Service
 
-13.  OTA, over-the-air firmware upyes and FTP, file transfer protocol implemented.
+13.  OTA, over-the-air firmware updates and FTP, file transfer protocol implemented.
 
 14,  New:  "Camera View," main Menu option; provides RTSP, Wyse Cam v3 near real time, video feed.
 
