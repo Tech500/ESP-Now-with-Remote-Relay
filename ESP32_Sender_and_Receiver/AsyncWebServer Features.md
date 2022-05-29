@@ -30,7 +30,7 @@ a 15 minute interval. Serve weather more likely with a sudden drop. Difference o
 of Mercury point is set for my observations to log and sound audible alert; not based on any 
 known value to be associated with serve weather --experimental.
 
-9. Two-line LCD Display of Barometric Pressure, in both inches of Mercury and millibars.
+9. Optional, Two-line LCD Display of Barometric Pressure, in both inches of Mercury and millibars.
 
 10. Tempature, Humidity, Barometric Pressure, and Dew Point have four embedded "ThinkSpeak.com"
 graphs on one web page. Graphs are created from Iframes provided by "ThingSpeak.com"
@@ -39,14 +39,14 @@ graphs on one web page. Graphs are created from Iframes provided by "ThingSpeak.
 
 12. Two websites,one sketch: "NTP_Time-Synced_Web_Interface.ino."
 
-http://weather-3.ddns.net/Weather  Project web site servered from ESP32; has file browser and 
-video feed.
+ http://weather-3.ddns.net/Weather  Project web site servered from ESP32; has file browser and 
+ video feed.
 
-https://observeredweather.000webhostapp.com   Project web site served by Free Hosting Service
+ https://observeredweather.000webhostapp.com   Project web site served by Free Hosting Service
 
 13.  OTA, over-the-air firmware updates and FTP, file transfer protocol implemented.
 
-14,  New:  "Camera View," main Menu option; provides RTSP, Wyse Cam v3 near real time, video feed.
+14.  New:  "Camera View," main Menu option; provides RTSP, Wyse Cam v3 near real time, video feed.
 
 
 
