@@ -4,6 +4,8 @@
 //   William M. Lucid   01/12/2022 @ 15:26 EST  
 // 
 
+//   Edit "ESP32_Sender_and_Receiver.ino" lines 1453 and 1454 to enable email alerts and sms alerts  --sms alerts maybe late arriving!
+
 // Replace with your network details   
 const char * host  = "esp8266";
 
