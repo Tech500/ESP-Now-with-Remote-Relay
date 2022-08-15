@@ -1449,10 +1449,9 @@ void sendRequestURL()  //Triggers cellphone SMS alert and email alert.
           message.subject = "Warning High Water!!!";
           message.message = "Urgent --Sump Pump alert --high water level!!";
 
-          //EMailSender::Response resp = emailSend.send("3177710083@vtext.com", message);
-          EMailSender::Response resp = emailSend.send("3173405675@vtext.com", message);
+          EMailSender::Response resp = emailSend.send("#########@vtext.com", message);  //Carrier = Verizon vtext.com; others lookup
           //emailSend.send("esp8266.sump@gmail.com", message);
-          emailSend.send("lucidw.esp8266@gmail.com", message);
+          //emailSend.send("#######@gmail.com", message);
 
           Serial.println("Sending status: "); 
 
@@ -1480,7 +1479,8 @@ void ultra()    //Get distance in inches from the floor (top of Sump Pit.)
      pingTravelDistance = (pingTravelTime * 765.*5280.*12) / (3600.*1000000);
      distanceToTarget = (pingTravelDistance / 2);
      Serial.print("\nDistance to Target is: ");
-     distanceToTarget = random(0,13);
+	
+     //distanceToTarget = random(0,13);
 
      Serial.print(distanceToTarget);
      Serial.println(" in.");
@@ -1490,7 +1490,7 @@ void ultra()    //Get distance in inches from the floor (top of Sump Pit.)
      
      delay(50);
 
-    //textRequest = 1;
+    textRequest = 1;
 
     if(distanceToTarget <= 6)  //Sets distance to top of Sump Pit in whole inches.  //Set to less than 3 inches from top.
     {
@@ -1507,7 +1507,7 @@ void ultra()    //Get distance in inches from the floor (top of Sump Pit.)
     }
 
 
-    //sendRequestURL();
+    sendRequestURL();
 
     urgent = "   Alert";
 
