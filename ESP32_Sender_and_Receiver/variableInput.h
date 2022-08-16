@@ -1,10 +1,11 @@
 //
-//   "New_ESP8266_ThingSpeak_Joe.ino"           Only edit ######## entries with your information; make no other changes!!!!
+//    Only edit ######## entries with your information; make no other changes!!!!
 //   variableInput.h library
 //   William M. Lucid   01/12/2022 @ 15:26 EST  
 // 
 
 //   Edit "ESP32_Sender_and_Receiver.ino" lines 1453 and 1454 to enable email alerts and sms alerts  --sms alerts maybe late arriving!
+//   Edit "ESP32_Sender_and_Receiver.ino" line 1458.  Comment out this line to use US-100 ultrasonic sensor.
 
 // Replace with your network details   
 const char * host  = "esp8266";
@@ -26,7 +27,7 @@ const char * udpAddress2 = "time.nist.gov";
 //publicIP accessiable over Internet with Port Forwarding; know the risks!!!
 //WAN IP Address.  Or use LAN IP Address --same as server ip; no Internet access. 
 //#define publicIP  70,225,18,250  //Part of href link for "GET" requests
-#define publicIP  68,50,44,149 //Part of href link for "GET" requests
+#define publicIP  ###,###,###,### //Part of href link for "GET" requests
 
 String LISTEN_PORT = "####"; //Part of href link for "GET" requests
 String linkAddress = "##########:####";  //publicIP and PORT for URL link
