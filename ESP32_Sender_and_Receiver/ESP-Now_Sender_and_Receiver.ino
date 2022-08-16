@@ -20,17 +20,6 @@
 //
 //                       Previous projects:  https://github.com/tech500
 //
-//                       Project is Open-Source, requires one BME280 breakout board, a NEO m8n GPS Module, and a "HiLetgo ESP-WROOM-32 ESP32 ESP-32S Development Board"
-//
-//                       http://weather-3.ddns.net/Weather  Project web page  --Servered from ESP32.
-//
-//                       https://observeredweather.000webhostapp.com  --Project: served by "free" Domain hosting service
-//
-//                       BME280 Caliabration:
-//                       "Tech Note 142 – Calibrate a BME280/680 Pressure Sensor or Barometer"  --G6EJD - David   (BME280 in this sketch is calibrated for Indianapolis, IND)
-//                       https://www.youtube.com/embed/Wq-Kb7D8eQ4?list=LL
-//
-//
 //                       Note:  Uses ESP32 core by ESP32 Community, version 2.0.4; from "Arduino IDE, Board Manager."   Arduino IDE; use Board:  "Node32s" for the "HiLetGo" ESP32 Board.
 //
 //
@@ -45,13 +34,7 @@ Building new version to start and stop aux sump pit pump based on level of prima
 Developed by William M. Lucid 
 ab9nq.william@gmail.com
 
-Untested on AT&T Network Gateway 1/12/2022  @ 15:38 EST
-Tested on Xfinity Network 1/12/2022 @ 15:00 EST status:  working
-
-This copy is for use by Joe Leggins
-to monitor his Sump Pump.
-
-Program uses ultrasonic sensing to measure distance of water from top of sump pit.
+Program uses US-100, ultrasonic sensor to measure distance of water from top of sump pit.
 
 Features:
 
@@ -62,6 +45,7 @@ Features:
 5.  FTP for file maintence; should it be needed.
 6.  Automatic deletion of log files.  Can be daily of weekly
 7.  OTA Over-the-air firmware updates.
+8.  WIFI Client Eventlogging.
 
 */
 
@@ -78,32 +62,23 @@ Features:
 #include <arduino.h>
 #include "EMailSender.h"   //https://github.com/xreef/EMailSender
 #include <esp_now.h>
-//#include "EEPROM.h"  //Part of version 2.0.4 ESP32 Board Manager install
-#include <WiFi.h>   //Part of version 2.0.4 ESP32 Board Manager install
-#include <WiFiUdp.h>  //2.0.4 ESP32 Board Manager install
-//#include <DNSServer.h>
-//#include <WebServer.h>
-//#include <WiFiManager.h>  //https://github.com/tzapu/WiFiManager
-#include <HTTPClient.h>  //Part of version 2.0.4 ESP32 Board Manager install
+#include <WiFi.h>   
+#include <WiFiUdp.h>  
+#include <HTTPClient.h>  
 #include <AsyncTCP.h>  //https://github.com/me-no-dev/AsyncTCP
 #include <ESPAsyncWebServer.h>  //https://github.com/me-no-dev/ESPAsyncWebServer
-#include <ESPmDNS.h> //Part of version 2.0.4 ESP32 Board Manager install
+#include <ESPmDNS.h> 
 #include <FTPServer.h>  //https://github.com/dplasa/FTPClientServer
-//#include <HTTPClient.h>   //Part of version 2.0.4 ESP32 Board Manager install  ----> Used for Domain Web Interace
 #include <sys/time.h>  // struct timeval --> Needed to sync time
 #include <time.h>   // time() ctime() --> Needed to sync time
 #include <FS.h>
 #include <LittleFS.h>
-#include <Update.h>  //2.0.4 ESP32 Board Manager install
+#include <Update.h>  
 #include <ThingSpeak.h>   //https://github.com/mathworks/thingspeak-arduino . Get it using the Library Manager
-//#include <BME280I2C.h>   //Use the Arduino Library Manager, get BME280 by Tyler Glenn
-//Addition information on this library:  https://github.com/finitespace/BME280
-//#include <EnvironmentCalculations.h>  //Use the Arduino Library Manager, get BME280 by Tyler Glenn
-#include <Wire.h>    //Part of version 2.0.4 ESP32 Board Manager install  -----> Used for I2C protocol
-#include <Ticker.h>  //Part of version 2.0.4 ESP32 Board Manager install  -----> Used for watchdog ISR
+#include <Wire.h>    
+#include <Ticker.h>  
 #include <rom/rtc.h>
-//#include <LiquidCrystal_I2C.h>   //https://github.com/esp8266/Basic/tree/master/libraries/LiquidCrystal optional
-#include "variableInput.h"  //Packaged with project download.  Provides editing options; without having to search 2000+ lines of code.
+#include "variableInput.h"  //Have you edited "######" input fields?   Provides editing options; without having to search 2000+ lines of code.
 
 // Replace with your network details
 //const char* host;
@@ -128,14 +103,13 @@ Features:
 
 int relay;
 
-//MAC Address of that receives incoming relay status
+//MAC Address of ESP32 board that receives incoming relay status via ESP-Now Sender only board; MAC Address.
 //uint8_t broadcastAddress1[] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF};
-//uint8_t broadcastAddress1[] = {0x30, 0xAE, 0xA4, 0xDF, 0xB3, 0x6C};   //ESP32 Dev Board:  MAC: 30:AE:A4:DF:B3:6C
 uint8_t broadcastAddress1[] = {0xE0, 0xE2, 0xE6, 0x9B, 0x86, 0x70};   //Adafruit Feather
 
 //Structure to send data
 //Must match the receiver structure
-typedef struct struct_message2 {
+typedef struct struct_message2 {  
     int batteryRelay;
 } struct_message2;
 
@@ -1481,7 +1455,7 @@ void ultra()    //Get distance in inches from the floor (top of Sump Pit.)
      distanceToTarget = (pingTravelDistance / 2);
      Serial.print("\nDistance to Target is: ");
 
-     distanceToTarget = random(0,13);   //Used for testig; without us-100 ultrasonic sensor.
+     distanceToTarget = random(0,13);   //Used for testig; without us-100 ultrasonic sensor.  Comment out for use with us-100.
 
      Serial.print(distanceToTarget);
      Serial.println(" in.");
