@@ -6,6 +6,9 @@
 
 //   Edit "ESP32_Sender_and_Receiver.ino" lines 1453 and 1454 to enable email alerts and sms alerts  --sms alerts maybe late arriving!
 //   Edit "ESP32_Sender_and_Receiver.ino" line 1458.  Comment out this line to use US-100 ultrasonic sensor.
+//
+//   Router wireless channel is set to channel 5; this  Change router to match or change variable CHAN_AP to your router wireless channel.
+//   CHAN_AP can be found in "ESP32_Sender_and_Receiver.ino." line 102; also edit in "ESP32_Recever_Only.ino" line 56   WiFi.softAP(ssidAP,passwordAP,5);
 
 // Replace with your network details   
 const char * host  = "esp8266";
