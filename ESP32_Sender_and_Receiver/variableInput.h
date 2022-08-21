@@ -1,14 +1,12 @@
 //
 //    Only edit ######## entries with your information; make no other changes!!!!
 //   variableInput.h library
-//   William M. Lucid   01/12/2022 @ 15:26 EST  
+//   William M. Lucid   08/21/2022 @ 18:22 EDT  
 // 
-
-//   Edit "ESP32_Sender_and_Receiver.ino" lines 1453 and 1454 to enable email alerts and sms alerts  --sms alerts maybe late arriving!
 //   Edit "ESP32_Sender_and_Receiver.ino" line 1458.  Comment out this line to use US-100 ultrasonic sensor.
 //
+//   Edit "ESP32_Sender_and_Receiver.ino" with your data; lines 281, 1422, and 1423 --Used with sending SMS alertsand sending email alerts.
 //   Router wireless channel is set to channel 5; this  Change router to match or change variable CHAN_AP to your router wireless channel.
-//   Edit "ESP32_Sender_and_Receiver with your data; lines 281, 1422, and 1423 --Used with sending SMS alertsand sending email alerts.
 //   CHAN_AP can be found in "ESP32_Sender_and_Receiver.ino." line 102; also edit in "ESP32_Recever_Only.ino" line 56   WiFi.softAP(ssidAP,passwordAP,5);
 
 // Replace with your network details   
