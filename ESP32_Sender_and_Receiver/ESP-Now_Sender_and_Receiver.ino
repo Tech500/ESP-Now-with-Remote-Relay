@@ -278,10 +278,9 @@ void onEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventTyp
 
 //////////////////////////////// End OEA Support //////////////////////
 
-//EMailSender emailSend("esp8266.sump@gmail.com", "Mysumpalert$");
-EMailSender emailSend("lucidw.esp8266@gmail.com", "vfwtnrizswrwbavg");
+EMailSender emailSend("##########@gmail.com", "######################");
 
-static const uint32_t GPSBaud = 9600;                   // Ublox GPS default Baud Rate is 9600
+static const uint32_t GPSBaud = 9600;                   
 
 const char* WiFi_hostname = "esp32";
 
@@ -1420,8 +1419,8 @@ void sendRequestURL()  //Triggers cellphone SMS alert and email alert.
           message.subject = "Warning High Water!!!";
           message.message = "Urgent --Sump Pump alert --high water level!!";
           
-          EMailSender::Response resp = emailSend.send("3173405675@vtext.com", message);
-          emailSend.send("lucidw.esp8266@gmail.com", message);
+          EMailSender::Response resp = emailSend.send("##########@vtext.com", message);
+          emailSend.send("###########@@gmail.com", message);
 
           Serial.println("Sending status: "); 
 
