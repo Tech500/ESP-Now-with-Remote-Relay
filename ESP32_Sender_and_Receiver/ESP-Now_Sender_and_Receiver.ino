@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // 
-//    Updated            Version  2.0 Aux_Sump_Monitor__ESP_Now.ino  08/15/2022 10:57 EDT  Developed by William  M. Lucid
+//    Updated            Version  2.0 Sump Monitor project  08/22/2022 21:09 EDT  Developed by William  M. Lucid
 //               
 //                       Added WiFi Client Event logging of Web server starts, Brownouts, Watchdog, WiFi disconnects, WiFi reconnects.
 //                       
@@ -278,8 +278,7 @@ void onEvent(AsyncWebSocket * server, AsyncWebSocketClient * client, AwsEventTyp
 
 //////////////////////////////// End OEA Support //////////////////////
 
-//EMailSender emailSend("esp8266.sump@gmail.com", "Mysumpalert$");
-EMailSender emailSend("lucidw.esp8266@gmail.com", "vfwtnrizswrwbavg");
+EMailSender emailSend("###########@gmail.com", "######################");
 
 static const uint32_t GPSBaud = 9600;                   // Ublox GPS default Baud Rate is 9600
 
@@ -391,7 +390,7 @@ void setup()
   while (!Serial) {}
 
   Serial.println("");
-  Serial.println("\nVersion  2.0 Aux_Sump_Monitor__ESP_Now.ino  07:54 EDT");
+  Serial.println("\nVersion  2.0 Aux_Sump_Monitor__ESP_Now.ino  08/22/2021 21:09 EDT");
   Serial.println("");
 
   if (rtc_get_reset_reason(0) == 1)  //VBAT_RESET --brownout restart
@@ -1417,8 +1416,8 @@ void sendRequestURL()  //Triggers cellphone SMS alert and email alert.
           message.subject = "Warning High Water!!!";
           message.message = "Urgent --Sump Pump alert --high water level!!";
           
-          EMailSender::Response resp = emailSend.send("3173405675@vtext.com", message);
-          emailSend.send("lucidw.esp8266@gmail.com", message);
+          EMailSender::Response resp = emailSend.send("############@vtext.com", message);
+          emailSend.send("#######################@gmail.com", message);
 
           Serial.println("Sending status: "); 
 
