@@ -1,0 +1,18 @@
+12.00 inches  , Mon , 08/22/2022 , 19:58:17 EDT ,  Aux. Pump:  OFF ,  Run time:  4.88  Minute/s
+6.00 inches  , Mon , 08/22/2022 , 20:04:17 EDT   Alert,  Aux. Pump:  ON 
+11.00 inches  , Mon , 08/22/2022 , 20:06:17 EDT ,  Aux. Pump:  OFF ,  Run time:  2.00  Minute/s
+5.00 inches  , Mon , 08/22/2022 , 20:08:17 EDT   Alert,  Aux. Pump:  ON 
+7.00 inches  , Mon , 08/22/2022 , 20:12:17 EDT ,  Aux. Pump:  OFF ,  Run time:  4.00  Minute/s
+6.00 inches  , Mon , 08/22/2022 , 20:14:17 EDT   Alert,  Aux. Pump:  ON 
+11.00 inches  , Mon , 08/22/2022 , 20:16:17 EDT ,  Aux. Pump:  OFF ,  Run time:  2.00  Minute/s
+1.00 inches  , Mon , 08/22/2022 , 20:18:17 EDT   Alert,  Aux. Pump:  ON 
+7.00 inches  , Mon , 08/22/2022 , 20:24:17 EDT ,  Aux. Pump:  OFF ,  Run time:  6.00  Minute/s
+6.00 inches  , Mon , 08/22/2022 , 20:26:17 EDT   Alert,  Aux. Pump:  ON 
+8.00 inches  , Mon , 08/22/2022 , 20:30:17 EDT ,  Aux. Pump:  OFF ,  Run time:  4.00  Minute/s
+6.00 inches  , Mon , 08/22/2022 , 20:34:17 EDT   Alert,  Aux. Pump:  ON 
+8.00 inches  , Mon , 08/22/2022 , 20:38:17 EDT ,  Aux. Pump:  OFF ,  Run time:  4.00  Minute/s
+1.00 inches  , Mon , 08/22/2022 , 20:40:17 EDT   Alert,  Aux. Pump:  ON 
+11.00 inches  , Mon , 08/22/2022 , 20:42:17 EDT ,  Aux. Pump:  OFF ,  Run time:  2.00  Minute/s
+4.00 inches  , Mon , 08/22/2022 , 20:44:17 EDT   Alert,  Aux. Pump:  ON 
+12.00 inches  , Mon , 08/22/2022 , 20:50:17 EDT ,  Aux. Pump:  OFF ,  Run time:  6.00  Minute/s
+6.00 inches  , Mon , 08/22/2022 , 20:52:17 EDT   Alert,  Aux. Pump:  ON 
